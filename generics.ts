@@ -20,3 +20,24 @@ function RetLen<T extends IWithLen>(arg: T): T {
 	return arg
 }
 console.log(RetLen([1, 2, 3]))
+
+// 泛型在类的应用
+const Gobj = RetLen({ length: 10, width: 10 })
+const Garr = RetLen([1, 2, 3])
+
+class Quene<T> {
+	private data = []
+	push(item: T) {
+		return this.data.push(item)
+	}
+	pop(): T {
+		return this.data.shift()
+	}
+}
+const quene = new Quene<number>()
+quene.push(1)
+// quene.push('str')
+console.log(quene.pop().toFixed())
+console.log(quene.pop().toFixed())
+
+// 泛型在接口的应用
