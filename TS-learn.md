@@ -1,4 +1,4 @@
-## TS-Learn
+# TS-Learn
 
 ### 基本类型
 
@@ -164,4 +164,20 @@ function reverse(x: number | string): number | string | void {
 - 将一个联合类型断言为其中一个类型，尽量避免断言后调用方法或引用深层属性，以减少不必要的运行时错误。
 - 将一个父类断言为更加具体的子类
 
+
+
+### `Type Guard`用`typeof`缩小范围
+
+
+```ts
+// type guard
+function getLen2(input: string | number):number{
+	// 缩小类型范围
+	if(typeof input === 'string'){
+		return input.length
+	} else{
+		return input.toString().length
+	}
+}
+```
 

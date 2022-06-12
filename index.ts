@@ -47,3 +47,26 @@ console.log(obj)
 const add: (a: number, b: number) => number = (a, b) => {
 	return a + b
 }
+
+// 类型断言
+let numberOrString: number | string
+// as关键字
+function getLen(input: string | number): number {
+	const str = input as string
+	if (str.length) {
+		return str.length
+	} else {
+		const number = input as number
+		return number.toString().length
+	}
+}
+
+// type guard
+function getLen2(input: string | number):number{
+	// 缩小类型范围
+	if(typeof input === 'string'){
+		return input.length
+	} else{
+		return input.toString().length
+	}
+}
