@@ -180,7 +180,9 @@ function getLen2(input: string | number):number{
 }
 ```
 
-## `Enums`
+
+
+## `Enums`枚举
 
 ```typescript
 enum Direction {
@@ -193,5 +195,46 @@ console.log(Direction.Left)	// 2
 console.log(Direction[0])		// Up
 ```
 
+编译后：实现双向赋值。
 
+<img src="https://tva1.sinaimg.cn/large/e6c9d24ely1h35fs8qbl1j20qs0c2jtb.jpg" alt="279BED06-F9D9-4515-A91C-A86486CACD33" style="zoom:50%;" />
+
+
+
+### 常量枚举
+
+> - 常数枚举与普通枚举的区别是，它会在编译阶段被删除，并且不能包含计算成员。假如包含了计算成员，则会在编译阶段报错。
+>
+> - 只有常量值可以进行常量枚举。
+
+```typescript
+const enum xxx{} // 常量枚举
+```
+
+编译后：
+
+<img src="https://tva1.sinaimg.cn/large/e6c9d24ely1h35fxz6cy3j20og05i74m.jpg" alt="5BA473DF-8B0B-4CB1-8003-B85104374607" style="zoom:50%;" />
+
+### 外部枚举
+
+```typescript
+// declare enum xxx
+declare enum Directions {
+    Up,
+    Down,
+    Left,
+    Right
+}
+let directions = [Directions.Up, Directions.Down, Directions.Left, Directions.Right];
+```
+
+编译后：
+
+```typescript
+var directions = [Directions.Up, Directions.Down, Directions.Left, Directions.Right];
+```
+
+
+
+## 泛型`Generics`
 
