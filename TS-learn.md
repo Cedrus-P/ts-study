@@ -164,3 +164,4 @@ function reverse(x: number | string): number | string | void {
 - 将一个联合类型断言为其中一个类型，尽量避免断言后调用方法或引用深层属性，以减少不必要的运行时错误。
 - 将一个父类断言为更加具体的子类
 
+
