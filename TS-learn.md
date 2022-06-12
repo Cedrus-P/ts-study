@@ -2,7 +2,7 @@
 
 ### 基本类型
 
-```ts
+```typescript
 // 空值
 let unsable:void = undefined
 // null和undefined
@@ -53,7 +53,7 @@ let gameState: GameState = 'running'
 
 ### Any
 
-```ts
+```typescript
 let num:any = 'five'
 num = 7
 
@@ -76,7 +76,7 @@ anyT.setName('aya')
 
 ### 联合类型
 
-```ts
+```typescript
 let num:string | number
 num = 'seven'
 num = 7
@@ -87,7 +87,7 @@ num = true //报错
 
 - 联合类型的变量在被赋值的时候，会根据类型推论的规则推断出一个类型：
 
-```ts
+```typescript
 let myFavoriteNumber: string | number
 myFavoriteNumber = 'seven'
 myFavoriteNumber.length // 5
@@ -97,7 +97,7 @@ console.log(myFavoriteNumber.length) // 编译时报错
 
 ### 接口
 
-```ts
+```typescript
 interface objType {
 	readonly a: number	//只读属性
 	b?: number[] //可选属性
@@ -115,7 +115,7 @@ let obj: objType = {
 
 ### 函数
 
-```ts
+```typescript
 let func: (arr: number[]) => number[] = function (arr: number[]) {
 	return arr
 }
@@ -123,7 +123,7 @@ let func: (arr: number[]) => number[] = function (arr: number[]) {
 
 #### 接口定义函数的形状
 
-```ts
+```typescript
 interface SearchFunc {
     (source: string, subString: string): boolean;
 }
@@ -136,7 +136,7 @@ mySearch = function(source: string, subString: string) {
 
 #### 重载
 
-```ts
+```typescript
 function reverse(x: number): number;
 function reverse(x: string): string;
 function reverse(x: number | string): number | string | void {
@@ -145,7 +145,6 @@ function reverse(x: number | string): number | string | void {
     } else if (typeof x === 'string') {
         return x.split('').reverse().join('');
     }
-}
 ```
 
 - 多次定义，TypeScript 会优先从最前面的函数定义开始匹配，所以多个函数定义如果有包含关系，需要**优先把精确的定义写在前面**。
@@ -169,7 +168,7 @@ function reverse(x: number | string): number | string | void {
 ### `Type Guard`用`typeof`缩小范围
 
 
-```ts
+```typescript
 // type guard
 function getLen2(input: string | number):number{
 	// 缩小类型范围
@@ -180,4 +179,19 @@ function getLen2(input: string | number):number{
 	}
 }
 ```
+
+## `Enums`
+
+```typescript
+enum Direction {
+	Up,
+	Down,
+	Left,
+	Right
+}
+console.log(Direction.Left)	// 2
+console.log(Direction[0])		// Up
+```
+
+
 
