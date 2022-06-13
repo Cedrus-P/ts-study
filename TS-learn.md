@@ -269,3 +269,23 @@ let kp1: KeyPair<number, string> = { key: 1, value: "string"}
 let kp2:KeyPair<string, number> = {key:'str', value:2}
 ```
 
+## 类型别名，字面量和交叉类型
+
+```typescript
+// 类型别名
+type Name = string
+type NameResolver = () => string
+type NameOrResolver = Name | NameResolver
+// 字面量
+const strZ: 'name' = 'name'
+const number: 1 = 1
+/ 交叉类型
+interface Iname {
+	name: string
+}
+// 加上去，交叉组合时使用type
+type IPerson = Iname & { age: number }
+let person: IPerson = { name: '123', age: 23 }
+```
+
+**在用到别名或者交叉组合时用`type`，遇到类和接口用`interface`**
