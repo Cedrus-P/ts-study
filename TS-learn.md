@@ -238,3 +238,34 @@ var directions = [Directions.Up, Directions.Down, Directions.Left, Directions.Ri
 
 ## 泛型`Generics`
 
+### 约束泛型`entends`
+
+```typescript
+interface IWithLen {
+	length: number
+}
+// extends 约束
+function RetLen<T extends IWithLen>(arg: T): T {
+	console.log(arg.length)
+	return arg
+}
+```
+
+### 泛型在类和接口的使用
+
+```typescript
+// 泛型类
+class GenericNumber<T> {
+  zeroValue: T;
+  add: (x: T, y: T) => T;
+}
+
+// 泛型接口
+interface KeyPair<T, U> {
+	key: T
+	value: U
+}
+let kp1: KeyPair<number, string> = { key: 1, value: "string"}
+let kp2:KeyPair<string, number> = {key:'str', value:2}
+```
+
