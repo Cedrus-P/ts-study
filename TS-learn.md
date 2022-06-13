@@ -289,3 +289,27 @@ let person: IPerson = { name: '123', age: 23 }
 ```
 
 **在用到别名或者交叉组合时用`type`，遇到类和接口用`interface`**
+
+
+
+## 项目中的typescript
+
+`xxx.d.ts`：没有任何的实际代码的实现，只有类型声明（interface、function、class等）。
+
+[TypeSearch](https://www.typescriptlang.org/dt/search?search=)：安装第三方库是否需要下载对应的类型文件。
+
+>- [`declare var`](https://ts.xcatliu.com/basics/declaration-files.html#declare-var) 声明全局变量
+>- [`declare function`](https://ts.xcatliu.com/basics/declaration-files.html#declare-function) 声明全局方法
+>- [`declare class`](https://ts.xcatliu.com/basics/declaration-files.html#declare-class) 声明全局类
+>- [`declare enum`](https://ts.xcatliu.com/basics/declaration-files.html#declare-enum) 声明全局枚举类型
+>- [`declare namespace`](https://ts.xcatliu.com/basics/declaration-files.html#declare-namespace) 声明（含有子属性的）全局对象
+>- [`interface` 和 `type`](https://ts.xcatliu.com/basics/declaration-files.html#interface-和-type) 声明全局类型
+>- [`export`](https://ts.xcatliu.com/basics/declaration-files.html#export) 导出变量
+>- [`export namespace`](https://ts.xcatliu.com/basics/declaration-files.html#export-namespace) 导出（含有子属性的）对象
+>- [`export default`](https://ts.xcatliu.com/basics/declaration-files.html#export-default) ES6 默认导出
+>- [`export =`](https://ts.xcatliu.com/basics/declaration-files.html#export-1) commonjs 导出模块
+>- [`export as namespace`](https://ts.xcatliu.com/basics/declaration-files.html#export-as-namespace) UMD 库声明全局变量
+>- [`declare global`](https://ts.xcatliu.com/basics/declaration-files.html#declare-global) 扩展全局变量
+>- [`declare module`](https://ts.xcatliu.com/basics/declaration-files.html#declare-module) 扩展模块
+>- [`/// `](https://ts.xcatliu.com/basics/declaration-files.html#san-xie-xian-zhi-ling) 三斜线指令
+
